@@ -1,0 +1,40 @@
+{
+  "aws_s3_bucket.insecure_bucket": {
+    "attributes": {
+      "acceleration_status": "",
+      "acl": "public",
+      "arn": "",
+      "bucket": "insecure-bucket",
+      "bucket_domain_name": "",
+      "bucket_regional_domain_name": "",
+      "force_destroy": "false",
+      "hosted_zone_id": "",
+      "id": "",
+      "region": "",
+      "request_payer": "",
+      "versioning.#": "",
+      "website_domain": "",
+      "website_endpoint": ""
+    },
+    "oldAttributes": {
+      "acceleration_status": "",
+      "acl": "",
+      "arn": "",
+      "bucket": "",
+      "bucket_domain_name": "",
+      "bucket_regional_domain_name": "",
+      "force_destroy": "",
+      "hosted_zone_id": "",
+      "id": "",
+      "region": "",
+      "request_payer": "",
+      "versioning.#": "",
+      "website_domain": "",
+      "website_endpoint": ""
+    },
+    "name": "insecure_bucket",
+    "resourceType": "aws_s3_bucket",
+    "requiresNew": true,
+    "willBeDestroyed": false
+  }
+}
