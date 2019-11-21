@@ -6,10 +6,10 @@ s3:
     company_service: 
     - "kinnaird"
     - "example-pass"
-    aws_account_id: 
+    account_id: 
     - "987654321012"
 
   # rule_name
   bucket_access_logs:
-    aws_account_id:
+    account_id:
     - "123456789012"
