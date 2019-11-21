@@ -13,16 +13,27 @@ Note: I'm still working out some kinks in this code. Right now it fails on legit
 
 ### Generating Terraform plan
 
+* Passing case
+  
 ```bash
 export COMPANY_SERVICE="kinnaird"
 export ACCOUNT_ID="987654321012"
-export TF_MODULE_NAME=s3-private-acl-fail
+export TF_MODULE_NAME=s3-private-acl-pass
 # Run terraform plan
 make plan
 ```
 
 This will generate the files in each test folder. The one of interest is titled `tfplan-combined.json`, which combines the environment variables of interest with the ones in the regular terraform plan file.
 
+* Failing case
+
+```bash
+export COMPANY_SERVICE="manyfails"
+export ACCOUNT_ID="123456789012"
+export TF_MODULE_NAME=s3-private-acl-fail
+# Run terraform plan
+make plan
+```
 
 ### View pass vs. Fail 
 

@@ -1,7 +1,7 @@
 {
   "TF_PIPELINE_ENV_VARS": {
-    "COMPANY_SERVICE": "kinnaird",
-    "ACCOUNT_ID": "987654321012"
+    "COMPANY_SERVICE": "manyfails",
+    "ACCOUNT_ID": "123456789012"
   },
   "aws_s3_bucket.insecure_bucket": {
     "attributes": {

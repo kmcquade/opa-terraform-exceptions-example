@@ -3,40 +3,12 @@
     "COMPANY_SERVICE": "kinnaird",
     "ACCOUNT_ID": "987654321012"
   },
-  "aws_kms_key.mykey": {
-    "attributes": {
-      "arn": "",
-      "deletion_window_in_days": "10",
-      "description": "This key is used to encrypt bucket objects",
-      "enable_key_rotation": "false",
-      "id": "",
-      "is_enabled": "true",
-      "key_id": "",
-      "key_usage": "",
-      "policy": ""
-    },
-    "oldAttributes": {
-      "arn": "",
-      "deletion_window_in_days": "",
-      "description": "",
-      "enable_key_rotation": "",
-      "id": "",
-      "is_enabled": "",
-      "key_id": "",
-      "key_usage": "",
-      "policy": ""
-    },
-    "name": "mykey",
-    "resourceType": "aws_kms_key",
-    "requiresNew": true,
-    "willBeDestroyed": false
-  },
-  "aws_s3_bucket.my_secure_bucket": {
+  "aws_s3_bucket.insecure_bucket": {
     "attributes": {
       "acceleration_status": "",
-      "acl": "private",
+      "acl": "public",
       "arn": "",
-      "bucket": "my-secure-bucket",
+      "bucket": "insecure-bucket",
       "bucket_domain_name": "",
       "bucket_regional_domain_name": "",
       "force_destroy": "false",
@@ -44,11 +16,6 @@
       "id": "",
       "region": "",
       "request_payer": "",
-      "server_side_encryption_configuration.#": "1",
-      "server_side_encryption_configuration.0.rule.#": "1",
-      "server_side_encryption_configuration.0.rule.0.apply_server_side_encryption_by_default.#": "1",
-      "server_side_encryption_configuration.0.rule.0.apply_server_side_encryption_by_default.0.kms_master_key_id": "${aws_kms_key.mykey.arn}",
-      "server_side_encryption_configuration.0.rule.0.apply_server_side_encryption_by_default.0.sse_algorithm": "aws:kms",
       "versioning.#": "",
       "website_domain": "",
       "website_endpoint": ""
@@ -65,16 +32,11 @@
       "id": "",
       "region": "",
       "request_payer": "",
-      "server_side_encryption_configuration.#": "",
-      "server_side_encryption_configuration.0.rule.#": "",
-      "server_side_encryption_configuration.0.rule.0.apply_server_side_encryption_by_default.#": "",
-      "server_side_encryption_configuration.0.rule.0.apply_server_side_encryption_by_default.0.kms_master_key_id": "",
-      "server_side_encryption_configuration.0.rule.0.apply_server_side_encryption_by_default.0.sse_algorithm": "",
       "versioning.#": "",
       "website_domain": "",
       "website_endpoint": ""
     },
-    "name": "my_secure_bucket",
+    "name": "insecure_bucket",
     "resourceType": "aws_s3_bucket",
     "requiresNew": true,
     "willBeDestroyed": false
