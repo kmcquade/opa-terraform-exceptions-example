@@ -2,16 +2,15 @@
 
 Showing a proposed YAML-based exceptions process for OPA policies on Terraform plans, using environment variables from a CICD pipeline as a method for specifying exception criteria.
 
-Note: I'm still working out some kinks in this code. Right now it fails on legit policies. I will make a note here in this repo when it works. Suggestions welcome.
-
 ### Instructions
 
 * Log in to AWS via CLI
 * Install [tfjson2](https://github.com/justinm/tfjson2)
-* Install [conftest](https://github.com/instrumenta/conftest)
-* Install jq
+* Install [jq](https://stedolan.github.io/jq/)
 
 ### Generating Terraform plan
+
+* Export your AWS credentials as environment variables in the command line
 
 * Passing case
   
@@ -24,8 +23,6 @@ make plan
 ```
 
 This will generate the files in each test folder. The one of interest is titled `tfplan-combined.json`, which combines the environment variables of interest with the ones in the regular terraform plan file.
-
->>> Here is where I need help. For some reason, the real policy is not reading from the YAML file.
 
 * Failing case
 
@@ -40,8 +37,13 @@ make plan
 ### View pass vs. Fail 
 
 ```bash
-make conftest-pass
-make conftest-fail
+export TF_MODULE_NAME=s3-private-acl-pass
+# Run the opa evaluation
+make opa-pass
+
+export TF_MODULE_NAME=s3-private-acl-fail
+# Run the opa evaluation
+make opa-fail
 ```
 
 The output will show that the policy fails.
