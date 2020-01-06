@@ -24,8 +24,8 @@ plan:
 		python3 $(TF_MODULE_SUBFOLDER)/../../utils/get_env_vars.py > $(TF_MODULE_SUBFOLDER)/${TF_PIPELINE_ENV_VARS}
 		jq -s '.[0] * .[1]' $(TF_MODULE_SUBFOLDER)/${TF_PIPELINE_ENV_VARS} $(TF_MODULE_SUBFOLDER)/${SHOW_FILE} > $(TF_MODULE_SUBFOLDER)/${TF_PLAN_COMBINED}
 
-opa-pass:
+opa:
 	@opa eval --data policy --input $(TF_MODULE_SUBFOLDER)/${TF_PLAN_COMBINED} --explain notes  --format=pretty "data.main"
 
-opa-fail:
+conftest:
 	@conftest test $(TF_MODULE_SUBFOLDER)/${TF_PLAN_COMBINED} -p policy

@@ -39,11 +39,11 @@ make plan
 ```bash
 export TF_MODULE_NAME=s3-private-acl-pass
 # Run the opa evaluation
-make opa-pass
+make opa
 
 export TF_MODULE_NAME=s3-private-acl-fail
 # Run the opa evaluation
-make opa-fail
+make opa
 ```
 
 The output will show that the policy fails.
